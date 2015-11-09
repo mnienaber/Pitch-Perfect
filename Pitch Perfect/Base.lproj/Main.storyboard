@@ -30,9 +30,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="SnailButton"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="45" y="113" width="133" height="127"/>
-                                </variation>
                                 <connections>
                                     <action selector="playSlow:" destination="D7d-2z-C4K" eventType="touchUpInside" id="LXo-QP-f3N"/>
                                 </connections>
@@ -41,9 +38,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="ChipmunkButton"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="46" y="322" width="131" height="123"/>
-                                </variation>
                                 <connections>
                                     <action selector="playChipmunkAudio:" destination="D7d-2z-C4K" eventType="touchUpInside" id="HV9-CH-6Nt"/>
                                 </connections>
@@ -52,9 +46,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="VaderButton"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="224" y="322" width="132" height="123"/>
-                                </variation>
                                 <connections>
                                     <action selector="playDarthvaderAudio:" destination="D7d-2z-C4K" eventType="touchUpInside" id="0DL-om-EKA"/>
                                 </connections>
@@ -63,9 +54,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="pause"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="155" y="343" width="91" height="81"/>
-                                </variation>
                                 <connections>
                                     <action selector="pauseAudio:" destination="D7d-2z-C4K" eventType="touchUpInside" id="ZSY-Zf-LgT"/>
                                 </connections>
@@ -74,9 +62,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="play"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="173" y="378" width="56" height="49"/>
-                                </variation>
                                 <connections>
                                     <action selector="playAudio:" destination="D7d-2z-C4K" eventType="touchUpInside" id="APs-c3-hKd"/>
                                 </connections>
@@ -85,9 +70,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="echo"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="151" y="241" width="98" height="73"/>
-                                </variation>
                                 <connections>
                                     <action selector="reverbAudio:" destination="D7d-2z-C4K" eventType="touchUpInside" id="EtC-gN-p5X"/>
                                 </connections>
@@ -96,9 +78,6 @@
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
                                 <state key="normal" image="RabbitButton"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="225" y="112" width="130" height="128"/>
-                                </variation>
                                 <connections>
                                     <action selector="playFast:" destination="D7d-2z-C4K" eventType="touchUpInside" id="Syr-ep-Fiu"/>
                                 </connections>
@@ -140,22 +119,22 @@
                                 <exclude reference="bSG-5f-OoE"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="3Kg-ur-FBw"/>
+                                <exclude reference="XT4-Fr-5rO"/>
+                                <exclude reference="ctq-U7-aH8"/>
+                                <exclude reference="LTg-93-W8f"/>
+                                <exclude reference="zEf-8x-eBp"/>
+                                <exclude reference="xH0-Am-09A"/>
+                                <exclude reference="Xj3-br-T1r"/>
+                                <exclude reference="pTM-JI-z8c"/>
+                                <exclude reference="qhu-QJ-8nn"/>
                                 <exclude reference="902-NC-XBG"/>
                                 <exclude reference="czg-m8-ncb"/>
                                 <exclude reference="G0f-Cd-Ppj"/>
                                 <exclude reference="t8W-dz-6Rj"/>
-                                <exclude reference="LTg-93-W8f"/>
-                                <exclude reference="zEf-8x-eBp"/>
-                                <exclude reference="xH0-Am-09A"/>
-                                <exclude reference="Gty-BQ-kXS"/>
                                 <exclude reference="D5a-0t-c9v"/>
                                 <exclude reference="JeL-qI-Tbb"/>
-                                <exclude reference="Xj3-br-T1r"/>
-                                <exclude reference="pTM-JI-z8c"/>
-                                <exclude reference="qhu-QJ-8nn"/>
-                                <exclude reference="3Kg-ur-FBw"/>
-                                <exclude reference="XT4-Fr-5rO"/>
-                                <exclude reference="ctq-U7-aH8"/>
+                                <exclude reference="Gty-BQ-kXS"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -170,22 +149,22 @@
                                 <include reference="bSG-5f-OoE"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="3Kg-ur-FBw"/>
+                                <include reference="XT4-Fr-5rO"/>
+                                <include reference="ctq-U7-aH8"/>
+                                <include reference="LTg-93-W8f"/>
+                                <include reference="zEf-8x-eBp"/>
+                                <include reference="xH0-Am-09A"/>
+                                <include reference="Xj3-br-T1r"/>
+                                <include reference="pTM-JI-z8c"/>
+                                <include reference="qhu-QJ-8nn"/>
                                 <include reference="902-NC-XBG"/>
                                 <include reference="czg-m8-ncb"/>
                                 <include reference="G0f-Cd-Ppj"/>
                                 <include reference="t8W-dz-6Rj"/>
-                                <include reference="LTg-93-W8f"/>
-                                <include reference="zEf-8x-eBp"/>
-                                <include reference="xH0-Am-09A"/>
-                                <include reference="Gty-BQ-kXS"/>
                                 <include reference="D5a-0t-c9v"/>
                                 <include reference="JeL-qI-Tbb"/>
-                                <include reference="Xj3-br-T1r"/>
-                                <include reference="pTM-JI-z8c"/>
-                                <include reference="qhu-QJ-8nn"/>
-                                <include reference="3Kg-ur-FBw"/>
-                                <include reference="XT4-Fr-5rO"/>
-                                <include reference="ctq-U7-aH8"/>
+                                <include reference="Gty-BQ-kXS"/>
                             </mask>
                         </variation>
                     </view>
@@ -219,16 +198,6 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MCx-Fm-RtM"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peg-nb-y1l">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.13422438502311707" green="0.077989257872104645" blue="0.75016385316848755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="168" y="422" width="65" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtb-mA-Gam">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
@@ -243,9 +212,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.13422438502311707" green="0.077989257872104645" blue="0.75016385316848755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="57" y="139" width="286" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <animations/>
@@ -253,54 +219,45 @@
                         <constraints>
                             <constraint firstItem="inK-Cy-ESV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4gs-if-I8l"/>
                             <constraint firstItem="gtb-mA-Gam" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Dd-DH-pc7"/>
-                            <constraint firstItem="peg-nb-y1l" firstAttribute="top" secondItem="inK-Cy-ESV" secondAttribute="bottom" constant="22" id="8to-hE-bwz"/>
                             <constraint firstItem="ceS-Oq-aRr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FrP-e4-tIu"/>
                             <constraint firstItem="inK-Cy-ESV" firstAttribute="top" secondItem="ceS-Oq-aRr" secondAttribute="bottom" constant="40" id="MY7-rp-8lJ"/>
-                            <constraint firstItem="peg-nb-y1l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T3n-ea-Jwb"/>
                             <constraint firstItem="inK-Cy-ESV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Vk9-NY-Rfz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gtb-mA-Gam" secondAttribute="bottom" constant="65" id="Zbh-XE-4bF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="inK-Cy-ESV"/>
-                                <exclude reference="peg-nb-y1l"/>
                                 <exclude reference="gtb-mA-Gam"/>
                                 <exclude reference="ceS-Oq-aRr"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="FrP-e4-tIu"/>
+                                <exclude reference="Zbh-XE-4bF"/>
+                                <exclude reference="7Dd-DH-pc7"/>
                                 <exclude reference="4gs-if-I8l"/>
                                 <exclude reference="MY7-rp-8lJ"/>
                                 <exclude reference="Vk9-NY-Rfz"/>
-                                <exclude reference="8to-hE-bwz"/>
-                                <exclude reference="T3n-ea-Jwb"/>
-                                <exclude reference="7Dd-DH-pc7"/>
-                                <exclude reference="Zbh-XE-4bF"/>
+                                <exclude reference="FrP-e4-tIu"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="inK-Cy-ESV"/>
-                                <include reference="peg-nb-y1l"/>
                                 <include reference="gtb-mA-Gam"/>
                                 <include reference="ceS-Oq-aRr"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="FrP-e4-tIu"/>
+                                <include reference="Zbh-XE-4bF"/>
+                                <include reference="7Dd-DH-pc7"/>
                                 <include reference="4gs-if-I8l"/>
                                 <include reference="MY7-rp-8lJ"/>
                                 <include reference="Vk9-NY-Rfz"/>
-                                <include reference="8to-hE-bwz"/>
-                                <include reference="T3n-ea-Jwb"/>
-                                <include reference="7Dd-DH-pc7"/>
-                                <include reference="Zbh-XE-4bF"/>
+                                <include reference="FrP-e4-tIu"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="2RU-YD-qFr"/>
                     <connections>
                         <outlet property="recordButton" destination="inK-Cy-ESV" id="eIH-nb-uZh"/>
-                        <outlet property="recordingInProgress" destination="peg-nb-y1l" id="J7q-4i-3L5"/>
                         <outlet property="showRecText" destination="ceS-Oq-aRr" id="vaF-dK-cei"/>
                         <outlet property="showStopButton" destination="gtb-mA-Gam" id="tRx-iX-PzG"/>
                         <segue destination="D7d-2z-C4K" kind="show" identifier="stopRecording" id="0j4-gf-bjT"/>
