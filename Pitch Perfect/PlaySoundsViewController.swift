@@ -4,7 +4,7 @@
 //
 //  Created by Michael Nienaber on 27/10/2015.
 //  Copyright © 2015 Michael Nienaber. All rights reserved.
-//
+//  1,2,3rd time's a charm.
 
 import UIKit
 import AVFoundation
@@ -15,6 +15,7 @@ class PlaySoundsViewController: UIViewController {
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
     var audioFile:AVAudioFile!
+    
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     
@@ -32,28 +33,27 @@ class PlaySoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func miscCommands(){
+    func zeroCurrentTime(){
         pauseButton.hidden = false
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopResetPlayer()
         audioPlayer.currentTime = 0.0
     }
     
-    func miscAudioPlayerCommands(){
+    func stopResetPlayer(){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
     }
     
-    func miscPlayerNode(){
-        miscAudioPlayerCommands()
+    func playerNode(){
+        stopResetPlayer()
         pauseButton.hidden = false
         playButton.hidden = true
     }
     
     func miscAudioPlay(speed: Float){
-        miscCommands()
+        playerNode()
+        audioPlayer.currentTime = 0.0
         audioPlayer.rate = speed
         audioPlayer.play()
     }
@@ -69,72 +69,59 @@ class PlaySoundsViewController: UIViewController {
     }
 
     @IBAction func playChipmunkAudio(sender: UIButton) {
-        playAudioWithVariablePitch(2000)
+        playAudioThruEffect(2000, decider: 1)
     }
     
     @IBAction func playDarthvaderAudio(sender: UIButton) {
-        playAudioWithVariablePitch(-500)
-    }
-    
-    
-    func playAudioWithVariablePitch(pitch: Float){
-        miscPlayerNode()
-        
-        let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
-        
-        let changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
-        
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format: nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        try! audioEngine.start()
-        
-        audioPlayerNode.play()
-        print("changing the pitch")
+        playAudioThruEffect(-500, decider: 1)
     }
     
     @IBAction func reverbAudio(sender: UIButton) {
-        playAudioWithReverb(70)
+        playAudioThruEffect(70, decider: 2)
     }
     
-    func playAudioWithReverb(mix: Float){
-        miscPlayerNode()
+    func playAudioThruEffect(mixValue: Float, decider: Int){
+        playerNode()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
-        let reverbEffect = AVAudioUnitReverb()
-        reverbEffect.wetDryMix = mix
-        audioEngine.attachNode(reverbEffect)
-        
-        audioEngine.connect(audioPlayerNode, to: reverbEffect, format: nil)
-        audioEngine.connect(reverbEffect, to: audioEngine.outputNode, format: nil)
-        
+        if decider == 1{
+            let effectAudio = AVAudioUnitTimePitch()
+            effectAudio.pitch = mixValue
+            audioEngine.attachNode(effectAudio)
+            audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
+            audioEngine.connect(effectAudio, to: audioEngine.outputNode, format: nil)
+        }else{
+            let effectAudio = AVAudioUnitReverb()
+            effectAudio.wetDryMix = mixValue
+            audioEngine.attachNode(effectAudio)
+            audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
+            audioEngine.connect(effectAudio, to: audioEngine.outputNode, format: nil)
+        }
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
         try! audioEngine.start()
         audioPlayerNode.play()
-        print("adding some 'verb")
+        print("applying an effect")
     }
 
     @IBAction func pauseAudio(sender: UIButton) {
+        audioEngine.pause()
         audioPlayer.pause()
-        pauseButton.hidden = true
         playButton.hidden = false
+        pauseButton.hidden = true
         print("audio paused")
     }
     
     @IBAction func playAudio(sender: UIButton) {
         audioPlayer.play()
-        playButton.hidden = true
         pauseButton.hidden = false
+        playButton.hidden = true
         print("replaying paused audio")
     }
     
     @IBAction func stopAllAudio(sender: UIButton) {
-        miscAudioPlayerCommands()
+        stopResetPlayer()
         playButton.hidden = true
         pauseButton.hidden = true
         print("stop all audio")
@@ -144,7 +131,7 @@ class PlaySoundsViewController: UIViewController {
         if(flag){
             playButton.hidden = true
             pauseButton.hidden = true
-            miscAudioPlayerCommands()
+            stopResetPlayer()
             print("audio has finished playing")
         }
             

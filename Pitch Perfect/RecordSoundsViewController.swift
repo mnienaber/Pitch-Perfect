@@ -27,8 +27,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate{
     
     override func viewWillAppear(animated: Bool) {
         showStopButton.hidden = true
-        showRecText.text = "Tap the mic to record"
-        
+        showRecText.text = "Tap the mic to record"  
     }
 
     @IBAction func recordAudio(sender: UIButton) {
