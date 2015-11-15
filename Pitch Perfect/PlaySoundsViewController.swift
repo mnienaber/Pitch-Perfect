@@ -9,12 +9,13 @@
 import UIKit
 import AVFoundation
 
-class PlaySoundsViewController: UIViewController {
+class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate{
     
     var audioPlayer: AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
     var audioFile:AVAudioFile!
+    var effectAudio:
     
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -27,6 +28,7 @@ class PlaySoundsViewController: UIViewController {
         audioFile = try! AVAudioFile(forReading: receivedAudio.filePathUrl)
         pauseButton.hidden = true
         playButton.hidden = true
+        audioPlayer.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,6 +60,11 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.play()
     }
     
+    func pausePlayHidden(){
+        playButton.hidden = true
+        pauseButton.hidden = true
+    }
+    
     @IBAction func playSlow(sender: UIButton) {
         miscAudioPlay(0.5)
         print("audio is playing slowly")
@@ -80,20 +87,20 @@ class PlaySoundsViewController: UIViewController {
         playAudioThruEffect(70, decider: 2)
     }
     
-    func playAudioThruEffect(mixValue: Float, decider: Int){
+    func playAudioThruEffect(mixValue: Float, decider: Int)
         playerNode()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
         if decider == 1{
-            let effectAudio = AVAudioUnitTimePitch()
+            let effectAudio: AVAudioUnitEffect!
             effectAudio.pitch = mixValue
             audioEngine.attachNode(effectAudio)
             audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
             audioEngine.connect(effectAudio, to: audioEngine.outputNode, format: nil)
         }else{
-            let effectAudio = AVAudioUnitReverb()
+            let effectAudio: AVAudioUnitEffect
             effectAudio.wetDryMix = mixValue
             audioEngine.attachNode(effectAudio)
             audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
@@ -122,15 +129,13 @@ class PlaySoundsViewController: UIViewController {
     
     @IBAction func stopAllAudio(sender: UIButton) {
         stopResetPlayer()
-        playButton.hidden = true
-        pauseButton.hidden = true
+        pausePlayHidden()
         print("stop all audio")
     }
     
     func audioPlayerDidFinishPlaying(audioPlayer: AVAudioPlayer, successfully flag: Bool){
         if(flag){
-            playButton.hidden = true
-            pauseButton.hidden = true
+            pausePlayHidden()
             stopResetPlayer()
             print("audio has finished playing")
         }
