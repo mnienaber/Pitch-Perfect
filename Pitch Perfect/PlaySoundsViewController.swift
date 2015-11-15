@@ -15,7 +15,6 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate{
     var receivedAudio:RecordedAudio!
     var audioEngine: AVAudioEngine!
     var audioFile:AVAudioFile!
-    var effectAudio:
     
     @IBOutlet weak var pauseButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
@@ -87,20 +86,20 @@ class PlaySoundsViewController: UIViewController, AVAudioPlayerDelegate{
         playAudioThruEffect(70, decider: 2)
     }
     
-    func playAudioThruEffect(mixValue: Float, decider: Int)
+    func playAudioThruEffect(mixValue: Float, decider: Int){
         playerNode()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
         
         if decider == 1{
-            let effectAudio: AVAudioUnitEffect!
+            let effectAudio = AVAudioUnitTimePitch()
             effectAudio.pitch = mixValue
             audioEngine.attachNode(effectAudio)
             audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
             audioEngine.connect(effectAudio, to: audioEngine.outputNode, format: nil)
         }else{
-            let effectAudio: AVAudioUnitEffect
+            let effectAudio = AVAudioUnitReverb()
             effectAudio.wetDryMix = mixValue
             audioEngine.attachNode(effectAudio)
             audioEngine.connect(audioPlayerNode, to: effectAudio, format: nil)
